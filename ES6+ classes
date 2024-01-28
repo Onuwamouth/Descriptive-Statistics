@@ -1,0 +1,24 @@
+Const numbers = [10, 20, 30, 40, 50];
+
+// Measure of Central Tendency
+Const mean = numbers.reduce((acc, val) =>acc + val, 0) / numbers.length;
+Const median = numbers.sort((a, b) => a – b)[Math.floor(numbers.length / 2)];
+Const mode = numbers.reduce(
+  (acc, val) => {
+Acc[val] = (acc[val] || 0) + 1;
+    Return acc;
+  },
+  {}
+);
+
+// Measures of Dispersion
+Const range = Math.max(...numbers) – Math.min(...numbers);
+Const variance = numbers.reduce((acc, val) =>acc + (val – mean) ** 2, 0) / numbers.length;
+ConststandardDeviation = Math.sqrt(variance);
+
+Console.log(“Mean:”, mean);
+Console.log(“Median:”, median);
+Console.log(“Mode:”, Object.keys(mode).filter((key) => mode[key] === Math.max(...Object.values(mode))));
+Console.log(“Range:”, range);
+Console.log(“Variance:”, variance);
+Console.log(“Standard Deviation:”, standardDeviation);
